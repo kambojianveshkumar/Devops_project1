@@ -21,6 +21,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           source: "./*"
           target: "/usr/share/nginx/html/"
+          ignore_known_hosts: true
 
       - name: Restart Nginx
         uses: appleboy/ssh-action@v1.0.3
