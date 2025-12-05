@@ -19,10 +19,8 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
-          source: |
-            index.html
-            *.css
-            *.js
+          source: "index.html"
+
           target: "/usr/share/nginx/html/"
           ignore_known_hosts: true
 
