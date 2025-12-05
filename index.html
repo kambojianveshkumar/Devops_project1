@@ -1,10 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Deployment Success</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CI/CD Deployed Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #111827;
+        color: #ffffff;
+        text-align: center;
+        padding-top: 100px;
+    }
+    h1 {
+        font-size: 42px;
+        color: #16e0bd;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px;
+        color: #d1d5db;
+    }
+    .box {
+        width: 80%;
+        max-width: 600px;
+        margin: auto;
+        background: #1f2937;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #374151;
+    }
+    small {
+        color: #9ca3af;
+    }
+</style>
 </head>
-<body style="font-family:Arial;text-align:center;">
-<h1>🚀 CI/CD Deployment Successful!</h1>
-<p>Deployed from GitHub → AWS EC2 using GitHub Actions.</p>
+<body>
+    <div class="box">
+        <h1>Deployment Success</h1>
+        <p>This webpage is automatically deployed using GitHub Actions CI/CD to AWS EC2.</p>
+        <p>You are viewing a live deployment!</p>
+        <small>Created by Anvesh Kumar</small>
+    </div>
 </body>
 </html>
