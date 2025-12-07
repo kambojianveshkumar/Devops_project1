@@ -1,33 +1,46 @@
-name: Deploy to EC2
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-      
-      - name: Copy index.html to EC2
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          source: "index.html"
-          target: "/usr/share/nginx/html/"
-
-      - name: Restart Nginx on EC2
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            sudo systemctl restart nginx
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CI/CD Deployed Website</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #111827;
+        color: #ffffff;
+        text-align: center;
+        padding-top: 100px;
+    }
+    h1 {
+        font-size: 42px;
+        color: #16e0bd;
+        margin-bottom: 20px;
+    }
+    p {
+        font-size: 18px;
+        color: #d1d5db;
+    }
+    .box {
+        width: 80%;
+        max-width: 600px;
+        margin: auto;
+        background: #1f2937;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #374151;
+    }
+    small {
+        color: #9ca3af;
+    }
+</style>
+</head>
+<body>
+    <div class="box">
+        <h1>Deployment Success</h1>
+        <p>This webpage is automatically deployed using GitHub Actions CI/CD to AWS EC2.</p>
+        <p>You are viewing a live deployment!</p>
+        <small>Created by Anvesh Kumar</small>
+    </div>
+</body>
+</html>
